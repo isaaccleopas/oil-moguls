@@ -1,0 +1,8 @@
+<div class="flex min-h-screen flex-col">
+  <.site_nav current_path={@current_path} />
+  <main id="main" class="flex-1">
+    {@inner_content}
+  </main>
+  <.site_footer />
+  <.flash_group flash={@flash} />
+</div>
