@@ -36,8 +36,9 @@
       </div>
     </div>
   </section>
-  <section class="om-hero-mesh py-16 sm:py-24">
-    <div class="om-container flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+  <section class="om-hero-mesh relative overflow-hidden py-16 sm:py-24">
+    <HeroOrbs />
+    <div class="om-container relative z-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
       <div class="max-w-xl">
         <h2 class="om-display om-display-light text-3xl text-offwhite">Open ApexBee. Practise until the skill holds.</h2>
         <p class="mt-3 text-offwhite/70">ApexBee is live. Launch the product, or request community access if you are not a member yet.</p>
@@ -52,8 +53,9 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
+import FeatureCard from "../components/FeatureCard.vue";
+import HeroOrbs from "../components/HeroOrbs.vue";
 import PageHero from "../components/PageHero.vue";
 import SectionHeading from "../components/SectionHeading.vue";
-import FeatureCard from "../components/FeatureCard.vue";
 import { APEXBEE_URL } from "../content";
 </script>

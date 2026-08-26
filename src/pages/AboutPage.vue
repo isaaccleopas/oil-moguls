@@ -34,8 +34,8 @@
         ApexBee is a product of Oil Moguls: the practice layer beside Academy, community, and Conference. Same standard. Same members.
       </SectionHeading>
       <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <a :href="APEXBEE_URL" class="om-btn om-btn-primary w-fit" target="_blank" rel="noopener noreferrer">Launch ApexBee</a>
-        <RouterLink to="/apexbee" class="om-btn om-btn-outline w-fit">How it fits</RouterLink>
+        <a :href="APEXBEE_URL" class="om-btn om-btn-primary w-full sm:w-fit" target="_blank" rel="noopener noreferrer">Launch ApexBee</a>
+        <RouterLink to="/apexbee" class="om-btn om-btn-outline w-full sm:w-fit">How it fits</RouterLink>
       </div>
     </div>
   </section>
@@ -43,7 +43,7 @@
     <div class="om-container">
       <SectionHeading kicker="Values" title="What we will not trade away." />
       <div class="mt-12 grid gap-8 sm:grid-cols-2">
-        <article v-for="value in values" :key="value.title" class="border-t border-line pt-6">
+        <article v-for="value in values" :key="value.title" class="om-rise-item border-t border-line pt-6">
           <h2 class="font-semibold text-forest">{{ value.title }}</h2>
           <p class="om-body mt-2 text-sm">{{ value.body }}</p>
         </article>

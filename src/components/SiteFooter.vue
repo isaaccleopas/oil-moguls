@@ -10,21 +10,21 @@
       <div>
         <p class="text-xs font-medium tracking-[0.18em] uppercase text-offwhite/50">Products</p>
         <ul class="mt-4 space-y-3 text-sm">
-          <li><RouterLink to="/academy" class="text-offwhite/80 hover:text-sage">Academy</RouterLink></li>
+          <li><RouterLink to="/academy" class="om-footer-link">Academy</RouterLink></li>
           <li>
-            <a :href="APEXBEE_URL" class="text-offwhite/80 hover:text-sage" target="_blank" rel="noopener noreferrer">ApexBee</a>
+            <a :href="APEXBEE_URL" class="om-footer-link" target="_blank" rel="noopener noreferrer">ApexBee</a>
           </li>
-          <li><RouterLink to="/community" class="text-offwhite/80 hover:text-sage">Community</RouterLink></li>
-          <li><RouterLink to="/opportunities" class="text-offwhite/80 hover:text-sage">Opportunity Board</RouterLink></li>
-          <li><RouterLink to="/conference" class="text-offwhite/80 hover:text-sage">Conference</RouterLink></li>
+          <li><RouterLink to="/community" class="om-footer-link">Community</RouterLink></li>
+          <li><RouterLink to="/opportunities" class="om-footer-link">Opportunity Board</RouterLink></li>
+          <li><RouterLink to="/conference" class="om-footer-link">Conference</RouterLink></li>
         </ul>
       </div>
       <div>
         <p class="text-xs font-medium tracking-[0.18em] uppercase text-offwhite/50">Community</p>
         <ul class="mt-4 space-y-3 text-sm">
-          <li><RouterLink to="/audiences" class="text-offwhite/80 hover:text-sage">Who we serve</RouterLink></li>
-          <li><RouterLink to="/about" class="text-offwhite/80 hover:text-sage">About</RouterLink></li>
-          <li><RouterLink to="/join" class="text-offwhite/80 hover:text-sage">Join</RouterLink></li>
+          <li><RouterLink to="/audiences" class="om-footer-link">Who we serve</RouterLink></li>
+          <li><RouterLink to="/about" class="om-footer-link">About</RouterLink></li>
+          <li><RouterLink to="/join" class="om-footer-link">Join</RouterLink></li>
         </ul>
       </div>
       <div>

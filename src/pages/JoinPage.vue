@@ -16,7 +16,7 @@
         </ul>
       </div>
       <div class="om-card p-6 sm:p-8">
-        <div v-if="submitted" class="space-y-3">
+        <div v-if="submitted" class="om-form-success space-y-3">
           <p class="font-mono text-xs tracking-[0.18em] uppercase text-muted">Received</p>
           <h3 class="text-xl font-semibold text-forest">Thank you, {{ form.name }}.</h3>
           <p class="om-body text-sm">We have your request. A member of the team will follow up at {{ form.email }} with the next step for your path.</p>

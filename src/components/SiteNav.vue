@@ -1,11 +1,14 @@
 <template>
-  <header class="sticky top-0 z-40 border-b border-line/80 bg-offwhite/92 backdrop-blur-md">
-    <div class="om-container flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
-      <RouterLink to="/" class="shrink-0" aria-label="Oil Moguls home">
+  <header
+    class="om-header sticky top-0 z-40 border-b border-line/80 bg-offwhite/92 backdrop-blur-md"
+    :data-compact="String(compact)"
+  >
+    <div class="om-nav-bar om-container flex items-center justify-between gap-4">
+      <RouterLink to="/" class="om-wordmark-link shrink-0" aria-label="Oil Moguls home">
         <Wordmark />
       </RouterLink>
 
-      <nav class="hidden items-center gap-7 lg:flex" aria-label="Primary">
+      <nav class="hidden items-center gap-6 xl:flex" aria-label="Primary">
         <template v-for="item in navItems" :key="item.label">
           <a
             v-if="item.href"
@@ -27,67 +30,74 @@
         </template>
       </nav>
 
-      <div class="hidden items-center gap-3 lg:flex">
+      <div class="hidden items-center gap-3 xl:flex">
         <RouterLink to="/audiences" class="om-nav-link">Who we serve</RouterLink>
         <RouterLink to="/join" class="om-btn om-btn-primary">Join the community</RouterLink>
       </div>
 
       <button
         type="button"
-        class="inline-flex size-11 items-center justify-center text-forest lg:hidden"
+        class="om-burger inline-flex size-11 items-center justify-center text-forest xl:hidden"
         aria-controls="mobile-nav"
         :aria-expanded="open ? 'true' : 'false'"
-        aria-label="Open menu"
+        :aria-label="open ? 'Close menu' : 'Open menu'"
+        :data-open="String(open)"
         @click="open = !open"
       >
-        <span class="text-2xl leading-none">{{ open ? "×" : "☰" }}</span>
+        <span class="om-burger-lines" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </span>
       </button>
     </div>
 
-    <div v-show="open" id="mobile-nav" class="border-t border-line bg-offwhite lg:hidden">
-      <nav class="om-container flex flex-col gap-1 py-4" aria-label="Mobile">
-        <template v-for="item in navItems" :key="item.label">
-          <a
-            v-if="item.href"
-            :href="item.href"
-            class="flex min-h-11 items-center text-base font-medium text-night"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ item.label }}
-          </a>
+    <transition name="om-drawer">
+      <div v-if="open" id="mobile-nav" class="border-t border-line bg-offwhite xl:hidden">
+        <nav class="om-container flex flex-col gap-1 py-4" aria-label="Mobile">
+          <template v-for="item in navItems" :key="item.label">
+            <a
+              v-if="item.href"
+              :href="item.href"
+              class="flex min-h-11 items-center text-base font-medium text-night"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ item.label }}
+            </a>
+            <RouterLink
+              v-else
+              :to="item.to"
+              class="flex min-h-11 items-center text-base font-medium text-night"
+              @click="open = false"
+            >
+              {{ item.label }}
+            </RouterLink>
+          </template>
           <RouterLink
-            v-else
-            :to="item.to"
+            to="/audiences"
             class="flex min-h-11 items-center text-base font-medium text-night"
             @click="open = false"
           >
-            {{ item.label }}
+            Who we serve
           </RouterLink>
-        </template>
-        <RouterLink
-          to="/audiences"
-          class="flex min-h-11 items-center text-base font-medium text-night"
-          @click="open = false"
-        >
-          Who we serve
-        </RouterLink>
-        <RouterLink to="/join" class="om-btn om-btn-primary mt-3 w-full" @click="open = false">
-          Join the community
-        </RouterLink>
-      </nav>
-    </div>
+          <RouterLink to="/join" class="om-btn om-btn-primary mt-3 w-full" @click="open = false">
+            Join the community
+          </RouterLink>
+        </nav>
+      </div>
+    </transition>
   </header>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 import { RouterLink, useRoute } from "vue-router";
 import Wordmark from "./Wordmark.vue";
 import { APEXBEE_URL } from "../content";
 
 const route = useRoute();
 const open = ref(false);
+const compact = ref(false);
 
 const navItems = [
   { label: "Academy", to: "/academy" },
@@ -98,4 +108,24 @@ const navItems = [
 ];
 
 const isActive = (to) => route.path === to;
+
+function onScroll() {
+  compact.value = window.scrollY > 16;
+}
+
+watch(
+  () => route.fullPath,
+  () => {
+    open.value = false;
+  },
+);
+
+onMounted(() => {
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", onScroll);
+});
 </script>

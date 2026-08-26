@@ -7,7 +7,7 @@
       <SectionHeading kicker="How the board works" title="Verified in. Noise out.">
         We do not platform unverified roles, unpaid bait, or vague “opportunity” posts. Member time is treated as carefully as our own reputation.
       </SectionHeading>
-      <div class="mt-12 overflow-hidden rounded-sm border border-line">
+      <div class="om-list-clip mt-12 overflow-hidden rounded-sm border border-line">
         <div class="grid grid-cols-[1fr_auto] gap-4 border-b border-line bg-white px-4 py-3 text-xs font-medium tracking-[0.14em] uppercase text-muted sm:grid-cols-[2fr_1fr_1fr_auto] sm:px-6">
           <span>Role</span>
           <span class="hidden sm:inline">Discipline</span>
@@ -17,7 +17,7 @@
         <article
           v-for="role in roles"
           :key="role.title"
-          class="grid grid-cols-[1fr_auto] items-center gap-4 border-b border-line bg-offwhite px-4 py-5 last:border-b-0 sm:grid-cols-[2fr_1fr_1fr_auto] sm:px-6"
+          class="om-rise-item grid grid-cols-[1fr_auto] items-center gap-4 border-b border-line bg-offwhite px-4 py-5 last:border-b-0 sm:grid-cols-[2fr_1fr_1fr_auto] sm:px-6"
         >
           <div>
             <h2 class="font-semibold text-forest">{{ role.title }}</h2>

@@ -12,7 +12,7 @@ import JoinPage from "./pages/JoinPage.vue";
 const router = createRouter({
   history: createWebHistory(),
   scrollBehavior() {
-    return { top: 0 };
+    return { top: 0, left: 0 };
   },
   routes: [
     { path: "/", name: "home", component: HomePage, meta: { title: "Home" } },

@@ -13,7 +13,7 @@
     <div class="om-container">
       <SectionHeading kicker="Professionals" title="The people doing the work, and those trying to get in." />
       <div class="mt-12 grid gap-8 sm:grid-cols-2">
-        <article v-for="persona in professionals" :key="persona.name" class="border-t border-line pt-6">
+        <article v-for="persona in professionals" :key="persona.name" class="om-rise-item border-t border-line pt-6">
           <h2 class="font-semibold text-forest">{{ persona.name }}</h2>
           <p class="om-body mt-2 text-sm">{{ persona.body }}</p>
         </article>
@@ -26,15 +26,16 @@
         They join as members of the same community. Oil Moguls is not their competitor in the field. It is the room where their people learn and where serious professionals already are.
       </SectionHeading>
       <div class="mt-12 grid gap-8 sm:grid-cols-2">
-        <article v-for="persona in institutions" :key="persona.name" class="border-t border-line pt-6">
+        <article v-for="persona in institutions" :key="persona.name" class="om-rise-item border-t border-line pt-6">
           <h2 class="font-semibold text-forest">{{ persona.name }}</h2>
           <p class="om-body mt-2 text-sm">{{ persona.body }}</p>
         </article>
       </div>
     </div>
   </section>
-  <section class="om-hero-mesh py-16 sm:py-24">
-    <div class="om-container flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+  <section class="om-hero-mesh relative overflow-hidden py-16 sm:py-24">
+    <HeroOrbs />
+    <div class="om-container relative z-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
       <div class="max-w-xl">
         <h2 class="om-display om-display-light text-3xl text-offwhite">Find your path in the community.</h2>
         <p class="mt-3 text-offwhite/70">The join form asks who you are so we send you to Academy, ApexBee, Conference, or the right room, not a generic sales track.</p>
@@ -46,6 +47,7 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
+import HeroOrbs from "../components/HeroOrbs.vue";
 import PageHero from "../components/PageHero.vue";
 import SectionHeading from "../components/SectionHeading.vue";
 import { audiences } from "../content";
