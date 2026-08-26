@@ -1,29 +1,27 @@
 # Oil Moguls
 
-Premium marketing site for Oil Moguls, the learning community for oil and gas professionals. Built with Elixir and Phoenix LiveView.
+Marketing site for Oil Moguls, a learning community for oil and gas professionals. Vue 3 + Vite + Tailwind CSS v4.
 
-## Pages
-
-- `/` Home
-- `/academy` Oil Moguls Academy
-- `/community` Network and mentorship
-- `/opportunities` Verified Opportunity Board
-- `/conference` The Oil Moguls Conference
-- `/about` Brand story and values
-- `/partners` Enterprise and institutions
-- `/join` Access request form
-
-## Run locally
-
-Requirements: Elixir 1.15+ (this repo was generated against Elixir 1.20) and Erlang/OTP.
+Production: [https://oilmoguls.com](https://oilmoguls.com)
 
 ```bash
-mix setup
-mix phx.server
+npm install
+npm run dev
 ```
 
-Open [http://localhost:4000](http://localhost:4000).
+Open http://localhost:5173. Production build: `npm run build`.
 
-## Brand
+## Deploy
 
-Visual system follows the Oil Moguls brand handbook: Deep Forest Green `#0E3020`, Sage `#8FCDA5`, Off-White `#F2F6F1`, Inter (Söhne alternative), and the Drill Point mark.
+The site is a static nginx container on the ApexBee VPS (`85.17.145.58`), published at `127.0.0.1:4770`.
+
+Until Hostinger DNS is updated, HTTPS preview is:
+
+https://oilmoguls.85.17.145.58.sslip.io
+
+Point DNS at this server (Hostinger → DNS):
+
+- `A` `@` → `85.17.145.58`
+- `A` or `CNAME` `www` → `85.17.145.58` / `oilmoguls.com`
+
+Then issue Let's Encrypt certificates for `oilmoguls.com` and `www.oilmoguls.com`.

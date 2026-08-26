@@ -1,0 +1,18 @@
+name: oil_moguls
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: oil_moguls-app
+    container_name: oil_moguls
+    restart: always
+    ports:
+      - "127.0.0.1:4770:80"
+    networks:
+      - npm_default
+
+networks:
+  npm_default:
+    external: true
