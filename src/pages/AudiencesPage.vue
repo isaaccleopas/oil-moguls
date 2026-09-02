@@ -12,11 +12,17 @@
   <section class="border-y border-line bg-white py-16 sm:py-24">
     <div class="om-container">
       <SectionHeading kicker="Professionals" title="The people doing the work, and those trying to get in." />
-      <div class="mt-12 grid gap-8 sm:grid-cols-2">
-        <article v-for="persona in professionals" :key="persona.name" class="om-rise-item border-t border-line pt-6">
-          <h2 class="font-semibold text-forest">{{ persona.name }}</h2>
-          <p class="om-body mt-2 text-sm">{{ persona.body }}</p>
-        </article>
+      <div class="om-media-grid mt-12">
+        <FeatureCard
+          v-for="persona in professionals"
+          :key="persona.name"
+          :title="persona.name"
+          mark="Professional"
+          :image="persona.image"
+          to="/join"
+        >
+          {{ persona.body }}
+        </FeatureCard>
       </div>
     </div>
   </section>
@@ -25,11 +31,17 @@
       <SectionHeading kicker="Institutions in the community" title="Service companies, investors, trainers, and regulators sit here too.">
         They join as members of the same community. Oil Moguls is not their competitor in the field. It is the room where their people learn and where serious professionals already are.
       </SectionHeading>
-      <div class="mt-12 grid gap-8 sm:grid-cols-2">
-        <article v-for="persona in institutions" :key="persona.name" class="om-rise-item border-t border-line pt-6">
-          <h2 class="font-semibold text-forest">{{ persona.name }}</h2>
-          <p class="om-body mt-2 text-sm">{{ persona.body }}</p>
-        </article>
+      <div class="om-media-grid mt-12">
+        <FeatureCard
+          v-for="persona in institutions"
+          :key="persona.name"
+          :title="persona.name"
+          mark="Institution"
+          :image="persona.image"
+          to="/join"
+        >
+          {{ persona.body }}
+        </FeatureCard>
       </div>
     </div>
   </section>
@@ -47,6 +59,7 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
+import FeatureCard from "../components/FeatureCard.vue";
 import HeroOrbs from "../components/HeroOrbs.vue";
 import PageHero from "../components/PageHero.vue";
 import SectionHeading from "../components/SectionHeading.vue";

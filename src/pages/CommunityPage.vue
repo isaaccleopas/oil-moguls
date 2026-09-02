@@ -16,10 +16,10 @@
   <section class="border-y border-line bg-white py-16 sm:py-24">
     <div class="om-container">
       <SectionHeading kicker="What you join" title="Mentorship, peers, and a room worth being in." />
-      <div class="mt-12 grid gap-4 md:grid-cols-3">
-        <FeatureCard title="Verified mentors" mark="01">People who have sat through a well-control course and a procurement negotiation. They share what they know instead of protecting it.</FeatureCard>
-        <FeatureCard title="Peer community" mark="02">Students, graduates, engineers, geoscientists, operators, HSE and procurement professionals, executives, consultants, trainers, and the institutions around them.</FeatureCard>
-        <FeatureCard title="Trust you can see" mark="03">Verification badges on mentors and members. No fake experts. No unverified rooms dressed up as access.</FeatureCard>
+      <div class="om-media-grid mt-12">
+        <FeatureCard title="Verified mentors" mark="01" image="/cards/card-mentorship.jpg" to="/join">People who have sat through a well-control course and a procurement negotiation. They share what they know instead of protecting it.</FeatureCard>
+        <FeatureCard title="Peer community" mark="02" image="/cards/card-incubator.jpg" to="/audiences">Students, graduates, engineers, geoscientists, operators, HSE and procurement professionals, executives, consultants, trainers, and the institutions around them.</FeatureCard>
+        <FeatureCard title="Trust you can see" mark="03" image="/cards/card-leadership.jpg" to="/about">Verification badges on mentors and members. No fake experts. No unverified rooms dressed up as access.</FeatureCard>
       </div>
     </div>
   </section>

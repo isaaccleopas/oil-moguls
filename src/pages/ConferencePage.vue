@@ -14,10 +14,12 @@
     </div>
   </section>
   <section class="border-y border-line bg-white py-16 sm:py-24">
-    <div class="om-container grid gap-4 md:grid-cols-3">
-      <FeatureCard title="Substance on stage" mark="01">Technical sessions and career briefings from people inside the industry. No outsider keynotes dressed as insight.</FeatureCard>
-      <FeatureCard title="Access you can use" mark="02">Structured introductions, mentor hours, and hiring conversations with a vetted talent pool.</FeatureCard>
-      <FeatureCard title="Built for this market" mark="03">Hosted where African oil and gas talent actually lives and works, starting with Nigeria.</FeatureCard>
+    <div class="om-container">
+      <div class="om-media-grid">
+        <FeatureCard title="Substance on stage" mark="01" image="/cards/card-conference.jpg" to="/join">Technical sessions and career briefings from people inside the industry. No outsider keynotes dressed as insight.</FeatureCard>
+        <FeatureCard title="Access you can use" mark="02" image="/cards/card-mentorship.jpg" to="/opportunities">Structured introductions, mentor hours, and hiring conversations with a vetted talent pool.</FeatureCard>
+        <FeatureCard title="Built for this market" mark="03" image="/cards/card-incubator.jpg" to="/join">Hosted where African oil and gas talent actually lives and works, starting with Nigeria.</FeatureCard>
+      </div>
     </div>
   </section>
   <section class="py-16 sm:py-24">

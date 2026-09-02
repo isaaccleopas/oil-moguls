@@ -46,8 +46,8 @@ function playVeil() {
     veilClass.value = "is-uncovering";
     uncoverTimer = window.setTimeout(() => {
       veilClass.value = "";
-    }, 520);
-  }, 320);
+    }, 280);
+  }, 180);
 }
 
 watch(

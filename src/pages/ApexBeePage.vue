@@ -16,10 +16,10 @@
   <section class="border-y border-line bg-white py-16 sm:py-24">
     <div class="om-container">
       <SectionHeading kicker="Inside the product" title="Practice with a point." />
-      <div class="mt-12 grid gap-4 md:grid-cols-3">
-        <FeatureCard title="Targeted drills" mark="01">Short, serious practice sessions on the modules that matter for oil and gas professional programmes, not trivia.</FeatureCard>
-        <FeatureCard title="Visible progress" mark="02">Coverage, weak spots, and the next drill worth doing. Competence is currency; ApexBee makes it measurable.</FeatureCard>
-        <FeatureCard title="Programme depth" mark="03">Built around real tracks members sit: leadership, operations, HSE, regulation, and the business of oil and gas.</FeatureCard>
+      <div class="om-media-grid mt-12">
+        <FeatureCard title="Targeted drills" mark="01" image="/cards/card-apexbee.jpg" :href="APEXBEE_URL">Short, serious practice sessions on the modules that matter for oil and gas professional programmes, not trivia.</FeatureCard>
+        <FeatureCard title="Visible progress" mark="02" image="/cards/card-geoscience.jpg" :href="APEXBEE_URL">Coverage, weak spots, and the next drill worth doing. Competence is currency; ApexBee makes it measurable.</FeatureCard>
+        <FeatureCard title="Programme depth" mark="03" image="/cards/card-academy.jpg" to="/academy">Built around real tracks members sit: leadership, operations, HSE, regulation, and the business of oil and gas.</FeatureCard>
       </div>
     </div>
   </section>

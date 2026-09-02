@@ -28,7 +28,7 @@ let timer = 0;
 onMounted(() => {
   timer = window.setTimeout(() => {
     ready.value = true;
-  }, 280);
+  }, 60);
 });
 
 onUnmounted(() => window.clearTimeout(timer));

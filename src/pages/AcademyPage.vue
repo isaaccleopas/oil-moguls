@@ -7,12 +7,17 @@
       <SectionHeading kicker="Tracks" title="Curriculum with sector depth.">
         Named disciplines. No generic professional-development filler. Each track is designed to turn into work.
       </SectionHeading>
-      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <article v-for="track in tracks" :key="track.code" class="om-card p-6 sm:p-8">
-          <p class="font-mono text-xs text-muted">{{ track.code }}</p>
-          <h2 class="mt-3 text-lg font-semibold text-forest">{{ track.title }}</h2>
-          <p class="om-body mt-3 text-sm">{{ track.body }}</p>
-        </article>
+      <div class="om-media-grid mt-12">
+        <FeatureCard
+          v-for="track in tracks"
+          :key="track.code"
+          :title="track.title"
+          :mark="track.code"
+          :image="track.image"
+          to="/join"
+        >
+          {{ track.body }}
+        </FeatureCard>
       </div>
     </div>
   </section>
@@ -45,17 +50,18 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
+import FeatureCard from "../components/FeatureCard.vue";
 import PageHero from "../components/PageHero.vue";
 import SectionHeading from "../components/SectionHeading.vue";
 import { APEXBEE_URL } from "../content";
 
 const tracks = [
-  { code: "DRL", title: "Drilling & well operations", body: "Well control, planning, and field decision-making taught as they are used on the job." },
-  { code: "GEO", title: "Geoscience", body: "Subsurface interpretation, data practice, and the software fluency specialist roles require." },
-  { code: "HSE", title: "Health, safety & environment", body: "Regulation, culture, and verifiable certification pathways that hold up under audit." },
-  { code: "PRC", title: "Procurement & contracting", body: "Supplier landscapes, compliance, and strategic sourcing for operators and service companies." },
-  { code: "OPS", title: "Production & operations", body: "Supervisory skills and practical upskilling that fit rotation schedules, not classroom fiction." },
-  { code: "LDR", title: "Leadership & commercial", body: "The language of the boardroom, without talking down to anyone still on the way there." },
+  { code: "DRL", title: "Drilling & well operations", image: "/cards/card-drilling.jpg", body: "Well control, planning, and field decision-making taught as they are used on the job." },
+  { code: "GEO", title: "Geoscience", image: "/cards/card-geoscience.jpg", body: "Subsurface interpretation, data practice, and the software fluency specialist roles require." },
+  { code: "HSE", title: "Health, safety & environment", image: "/cards/card-hse.jpg", body: "Regulation, culture, and verifiable certification pathways that hold up under audit." },
+  { code: "PRC", title: "Procurement & contracting", image: "/cards/card-opportunity.jpg", body: "Supplier landscapes, compliance, and strategic sourcing for operators and service companies." },
+  { code: "OPS", title: "Production & operations", image: "/cards/card-operations.jpg", body: "Supervisory skills and practical upskilling that fit rotation schedules, not classroom fiction." },
+  { code: "LDR", title: "Leadership & commercial", image: "/cards/card-leadership.jpg", body: "The language of the boardroom, without talking down to anyone still on the way there." },
 ];
 
 const principles = [
