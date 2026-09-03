@@ -8,9 +8,16 @@
     :target="href ? '_blank' : undefined"
     :rel="href ? 'noopener noreferrer' : undefined"
   >
-    <div class="om-media-visual">
-      <img class="om-media-img" :src="image" :alt="alt || title" width="720" height="540" loading="lazy" decoding="async" />
-      <span class="om-media-shade" aria-hidden="true" />
+    <div class="om-media-scene">
+      <div class="om-media-flip">
+        <div class="om-media-face om-media-front">
+          <img class="om-media-img" :src="image" :alt="alt || title" width="720" height="540" loading="lazy" decoding="async" />
+          <span class="om-media-shade" aria-hidden="true" />
+        </div>
+        <div class="om-media-face om-media-back" aria-hidden="true">
+          <Wordmark className="om-media-logo" />
+        </div>
+      </div>
       <span v-if="to || href" class="om-media-plus" aria-hidden="true">+</span>
     </div>
     <div class="om-media-copy">
@@ -25,6 +32,7 @@
 <script setup>
 import { computed } from "vue";
 import { RouterLink } from "vue-router";
+import Wordmark from "./Wordmark.vue";
 
 const props = defineProps({
   title: { type: String, required: true },

@@ -1,10 +1,14 @@
 <template>
-  <PageHero kicker="Oil Moguls Academy" title="Master the skill the way working professionals do.">
-    Practical, verified courses for people in oil and gas, not for an oil company to run its assets. Learning starts here; ApexBee is where you practise it.
-  </PageHero>
-  <section class="py-16 sm:py-24">
-    <div class="om-container">
-      <SectionHeading kicker="Tracks" title="Curriculum with sector depth.">
+  <div class="om-pin-section">
+    <SectionPin label="Oil Moguls Academy" />
+    <PageHero title="Master the skill the way working professionals do.">
+      Practical, verified courses for people in oil and gas, not for an oil company to run its assets. Learning starts here; ApexBee is where you practise it.
+    </PageHero>
+  </div>
+  <section class="om-pin-section">
+    <SectionPin label="Tracks" />
+    <div class="om-container py-16 sm:py-24">
+      <SectionHeading title="Curriculum with sector depth.">
         Named disciplines. No generic professional-development filler. Each track is designed to turn into work.
       </SectionHeading>
       <div class="om-media-grid mt-12">
@@ -21,9 +25,10 @@
       </div>
     </div>
   </section>
-  <section class="border-y border-line bg-white py-16 sm:py-24">
-    <div class="om-container grid gap-12 lg:grid-cols-2">
-      <SectionHeading kicker="How we teach" title="Substance first. Credentials follow.">
+  <section class="om-pin-section border-y border-line bg-white">
+    <SectionPin label="How we teach" />
+    <div class="om-container grid gap-12 py-16 sm:py-24 lg:grid-cols-2">
+      <SectionHeading title="Substance first. Credentials follow.">
         We respect expertise above titles. Members earn standing through demonstrated skill, not proximity to power.
       </SectionHeading>
       <ul class="space-y-6">
@@ -34,8 +39,9 @@
       </ul>
     </div>
   </section>
-  <section class="py-16 sm:py-24">
-    <div class="om-container flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+  <section class="om-pin-section">
+    <SectionPin label="Next step" />
+    <div class="om-container om-pin-close flex flex-col gap-6 py-16 sm:flex-row sm:items-end sm:justify-between sm:py-24">
       <div class="max-w-xl">
         <h2 class="om-display text-3xl">Join a cohort. Put the skill to work.</h2>
         <p class="om-body mt-3">Completing a module should lead somewhere: ApexBee practice, a mentor, a verified listing, a stronger profile.</p>
@@ -53,6 +59,7 @@ import { RouterLink } from "vue-router";
 import FeatureCard from "../components/FeatureCard.vue";
 import PageHero from "../components/PageHero.vue";
 import SectionHeading from "../components/SectionHeading.vue";
+import SectionPin from "../components/SectionPin.vue";
 import { APEXBEE_URL } from "../content";
 
 const tracks = [

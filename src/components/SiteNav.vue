@@ -99,6 +99,10 @@ const route = useRoute();
 const open = ref(false);
 const compact = ref(false);
 
+function syncCompactNav() {
+  document.documentElement.dataset.compactNav = String(compact.value);
+}
+
 const navItems = [
   { label: "Academy", to: "/academy" },
   { label: "ApexBee", href: APEXBEE_URL },
@@ -120,12 +124,16 @@ watch(
   },
 );
 
+watch(compact, syncCompactNav);
+
 onMounted(() => {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+  syncCompactNav();
 });
 
 onUnmounted(() => {
   window.removeEventListener("scroll", onScroll);
+  delete document.documentElement.dataset.compactNav;
 });
 </script>

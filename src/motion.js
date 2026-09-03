@@ -8,8 +8,17 @@ function revealTargets(root) {
   const out = [];
   root.querySelectorAll("section:not(.om-page-hero)").forEach((section) => {
     const items = [...section.querySelectorAll(ITEM)];
-    if (items.length) out.push(...items);
-    else out.push(section);
+    if (items.length) {
+      out.push(...items);
+      return;
+    }
+    if (section.classList.contains("om-pin-section")) {
+      [...section.children].forEach((child) => {
+        if (!child.classList.contains("om-pin-kicker")) out.push(child);
+      });
+      return;
+    }
+    out.push(section);
   });
   return out;
 }
