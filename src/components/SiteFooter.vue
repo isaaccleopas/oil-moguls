@@ -3,7 +3,7 @@
     <div class="om-container grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12 lg:py-20">
       <div class="sm:col-span-2 lg:col-span-1">
         <Wordmark variant="light" />
-        <p class="om-body mt-5 max-w-xs text-sm text-offwhite/70">
+        <p class="mt-5 max-w-xs text-sm leading-relaxed text-offwhite/90">
           A learning community for oil and gas professionals, not an oil and gas company. Knowledge, practice, and access in one place.
         </p>
       </div>

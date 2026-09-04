@@ -4,7 +4,7 @@
     <div class="om-container relative z-10 py-12 sm:py-20 lg:py-24">
       <p v-if="kicker" class="om-eyebrow om-eyebrow-light om-hero-kicker">{{ kicker }}</p>
       <SplitHeading
-          class="om-display om-display-light max-w-3xl text-[1.85rem] sm:text-5xl lg:text-[3.25rem]"
+          class="om-display om-display-light max-w-3xl text-[1.85rem] md:text-4xl lg:text-[3.25rem]"
           :class="kicker ? 'mt-5' : 'mt-0'"
         :text="title"
       />

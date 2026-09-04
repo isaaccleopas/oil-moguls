@@ -6,7 +6,7 @@
       <div class="om-container relative z-10 grid gap-10 py-12 sm:gap-12 sm:py-20 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-end lg:py-28">
         <div>
           <SplitHeading
-            class="om-display om-display-light mt-0 max-w-3xl text-[1.85rem] sm:text-5xl lg:text-6xl"
+            class="om-display om-display-light mt-0 max-w-3xl text-[1.85rem] md:text-4xl lg:text-6xl"
             text="The learning community for oil and gas professionals."
           />
           <p class="om-hero-copy mt-6 max-w-xl text-base leading-relaxed text-offwhite/75 sm:text-lg">
